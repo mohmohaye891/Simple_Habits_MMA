@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/margin_medium_2"
+    android:background="#212837">
+
+    <ImageView
+        android:id="@+id/iv_program"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_image"/>
+
+    <TextView
+        android:id="@+id/tv_program"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_program"
+        android:text="Seeing The Goo In Others"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:textSize="@dimen/text_regular_2x"/>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_program"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:text="10 mins"
+        android:textColor="@color/colorWhite"
+        android:layout_marginBottom="@dimen/margin_medium_2"/>
 
 </RelativeLayout>

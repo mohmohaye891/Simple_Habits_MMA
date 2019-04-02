@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/bg_all_topics"
+    android:layout_marginBottom="@dimen/margin_medium_2">
+
+
+    <ImageView
+        android:id="@+id/iv_background"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_brightness_2_white_24dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_marginLeft="@dimen/margin_medium_3"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sleep"
+        android:layout_marginLeft="@dimen/margin_medium_2"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_regular_2x"
+        android:layout_toRightOf="@+id/iv_background"
+        android:layout_marginTop="@dimen/margin_large"/>
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rest effortlessly in deep sleep"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginLeft="@dimen/margin_medium_2"
+        android:layout_toRightOf="@+id/iv_background"
+        android:textColor="@color/colorWhite"/>
 
 </RelativeLayout>

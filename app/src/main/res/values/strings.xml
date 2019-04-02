@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Simple_Habits_MMA</string>
     <string name="action_settings">Settings</string>
+    <string name="label_start">Start Here</string>
+    <string name="label_simple_habit_starter">Simple Habit Starter</string>
+    <string name="lbl_time">5 mins</string>
+    <string name="lbl_all_topics">All Topics</string>
+    <string name="lbl_read_more">READ MORE</string>
 </resources>
