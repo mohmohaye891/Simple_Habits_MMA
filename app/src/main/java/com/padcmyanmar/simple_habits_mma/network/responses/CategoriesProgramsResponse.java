@@ -41,4 +41,8 @@ public class CategoriesProgramsResponse {
     public List<CategoryProgramsVO> getCategoryPrograms() {
         return categoryPrograms;
     }
+
+    public boolean isSuccess() {
+        return code == 200;
+    }
 }

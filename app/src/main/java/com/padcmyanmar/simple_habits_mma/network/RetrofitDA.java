@@ -2,7 +2,12 @@ package com.padcmyanmar.simple_habits_mma.network;
 
 import com.google.gson.Gson;
 import com.padcmyanmar.simple_habits_mma.data.models.TopicsModel;
+import com.padcmyanmar.simple_habits_mma.delegates.CategoryProgramDelegate;
+import com.padcmyanmar.simple_habits_mma.delegates.CurrentProgramDelegate;
+import com.padcmyanmar.simple_habits_mma.delegates.ProgramDelegate;
 import com.padcmyanmar.simple_habits_mma.delegates.TopicsDelegate;
+import com.padcmyanmar.simple_habits_mma.network.responses.CategoriesProgramsResponse;
+import com.padcmyanmar.simple_habits_mma.network.responses.CurrentProgramResponse;
 import com.padcmyanmar.simple_habits_mma.network.responses.TopicsResponse;
 
 import java.util.concurrent.TimeUnit;
@@ -67,4 +72,47 @@ public class RetrofitDA implements DataAgent {
             }
         });
     }
+
+    @Override
+    public void getCategoryProgram(String accessToken, int page, final CategoryProgramDelegate categoryProgramDelegate) {
+        Call<CategoriesProgramsResponse> categoriesProgramsResponseCall = mApi.getCategoryProgramResponse(accessToken, page);
+        categoriesProgramsResponseCall.enqueue(new Callback<CategoriesProgramsResponse>() {
+            @Override
+            public void onResponse(Call<CategoriesProgramsResponse> call, Response<CategoriesProgramsResponse> response) {
+                CategoriesProgramsResponse categoriesProgramsResponse = response.body();
+                if (categoriesProgramsResponse.isSuccess()) {
+                    categoryProgramDelegate.onSuccess(categoriesProgramsResponse.getCategoryPrograms());
+                } else {
+                    categoryProgramDelegate.onFail(categoriesProgramsResponse.getMessage());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CategoriesProgramsResponse> call, Throwable t) {
+                categoryProgramDelegate.onFail(t.getMessage());
+            }
+        });
+    }
+
+    @Override
+    public void getCurrentProgram(String accessToken, int page, final CurrentProgramDelegate currentProgramDelegate) {
+        Call<CurrentProgramResponse> currentProgramResponseCall = mApi.getCurrentProgramResponse(accessToken, page);
+        currentProgramResponseCall.enqueue(new Callback<CurrentProgramResponse>() {
+            @Override
+            public void onResponse(Call<CurrentProgramResponse> call, Response<CurrentProgramResponse> response) {
+                CurrentProgramResponse currentProgramResponse = response.body();
+                if (currentProgramResponse.isSuccess()){
+                    currentProgramDelegate.onSuccess(currentProgramResponse.getCurrentProgramVO());
+                }else {
+                    currentProgramDelegate.onFail(currentProgramResponse.getMessage());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CurrentProgramResponse> call, Throwable t) {
+                currentProgramDelegate.onFail(t.getMessage());
+            }
+        });
+    }
+
 }

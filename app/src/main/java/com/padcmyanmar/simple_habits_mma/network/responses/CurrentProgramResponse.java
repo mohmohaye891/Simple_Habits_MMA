@@ -32,4 +32,8 @@ public class CurrentProgramResponse {
     public CurrentProgramVO getCurrentProgramVO() {
         return currentProgramVO;
     }
+
+    public boolean isSuccess() {
+        return code == 200;
+    }
 }

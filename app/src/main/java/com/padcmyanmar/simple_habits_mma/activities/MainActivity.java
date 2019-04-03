@@ -13,9 +13,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.padcmyanmar.simple_habits_mma.R;
+import com.padcmyanmar.simple_habits_mma.adapters.CategoryProgramAdapter;
 import com.padcmyanmar.simple_habits_mma.adapters.TopicsAdapter;
 import com.padcmyanmar.simple_habits_mma.data.models.TopicsModel;
 import com.padcmyanmar.simple_habits_mma.data.models.TopicsModelImpl;
+import com.padcmyanmar.simple_habits_mma.data.vos.CategoryProgramsVO;
 import com.padcmyanmar.simple_habits_mma.data.vos.ProgramsVO;
 import com.padcmyanmar.simple_habits_mma.data.vos.TopicsVO;
 import com.padcmyanmar.simple_habits_mma.delegates.ProgramDelegate;
@@ -26,10 +28,10 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements ProgramDelegate{
 
-   /* @BindView(R.id.rv_one)
-    RecyclerView rvOne;*/
+    @BindView(R.id.rv_category)
+    RecyclerView rvCategory;
 
     @BindView(R.id.rv_all_topics)
     RecyclerView rvAllTopics;
@@ -38,6 +40,10 @@ public class MainActivity extends BaseActivity {
     private TopicsAdapter mTopicsAdapter;
 
     private TopicsModel mTopicsModel;
+
+
+
+    private CategoryProgramAdapter categoryProgramAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,9 +55,12 @@ public class MainActivity extends BaseActivity {
         setSupportActionBar(toolbar);
 
 
-       /* rvOne.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
+        rvCategory.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
                 LinearLayoutManager.VERTICAL,
-                false));*/
+                false));
+        categoryProgramAdapter = new CategoryProgramAdapter(this);
+        rvCategory.setAdapter(categoryProgramAdapter);
+
 
        rvAllTopics.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
                LinearLayoutManager.VERTICAL,
@@ -61,8 +70,17 @@ public class MainActivity extends BaseActivity {
 
        mTopicsModel = TopicsModelImpl.getObjInstance();
 
+       bindCategoryProgram();
+
         bindTopics();
 
+
+
+    }
+
+    private void bindCategoryProgram() {
+
+        //List<CategoryProgramsVO> categoryProgramsList =
     }
 
     private void bindTopics() {
@@ -86,4 +104,8 @@ public class MainActivity extends BaseActivity {
     }
 
 
+    @Override
+    public void onTapProgramItem(ProgramsVO programsVO) {
+
+    }
 }

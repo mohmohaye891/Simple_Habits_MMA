@@ -8,11 +8,18 @@ import android.view.ViewGroup;
 
 import com.padcmyanmar.simple_habits_mma.R;
 import com.padcmyanmar.simple_habits_mma.data.vos.ProgramsVO;
+import com.padcmyanmar.simple_habits_mma.delegates.ProgramDelegate;
 import com.padcmyanmar.simple_habits_mma.views.holders.ProgramsViewHolder;
 
 import java.util.PriorityQueue;
 
 public class ProgramsAdapter extends BaseRecyclerAdapter<ProgramsViewHolder, ProgramsVO> {
+
+    private ProgramDelegate mDelegate;
+
+    public ProgramsAdapter(ProgramDelegate delegate) {
+        mDelegate = delegate;
+    }
 
     @NonNull
     @Override

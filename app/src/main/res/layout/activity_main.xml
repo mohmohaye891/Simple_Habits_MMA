@@ -94,8 +94,8 @@
 
             </RelativeLayout>
 
-          <!--  <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_one"
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_category"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/rl_current"
@@ -103,7 +103,7 @@
                 android:layout_marginLeft="@dimen/margin_medium_2"
                 android:layout_marginRight="@dimen/margin_medium_2">
 
-            </android.support.v7.widget.RecyclerView>-->
+            </android.support.v7.widget.RecyclerView>
 
             <TextView
                 android:id="@+id/tv_all_topic"
