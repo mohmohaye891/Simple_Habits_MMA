@@ -15,6 +15,8 @@ import android.view.MenuItem;
 import com.padcmyanmar.simple_habits_mma.R;
 import com.padcmyanmar.simple_habits_mma.adapters.CategoryProgramAdapter;
 import com.padcmyanmar.simple_habits_mma.adapters.TopicsAdapter;
+import com.padcmyanmar.simple_habits_mma.data.models.CategoryProgramModel;
+import com.padcmyanmar.simple_habits_mma.data.models.CategoryProgramModelImpl;
 import com.padcmyanmar.simple_habits_mma.data.models.TopicsModel;
 import com.padcmyanmar.simple_habits_mma.data.models.TopicsModelImpl;
 import com.padcmyanmar.simple_habits_mma.data.vos.CategoryProgramsVO;
@@ -41,7 +43,7 @@ public class MainActivity extends BaseActivity implements ProgramDelegate{
 
     private TopicsModel mTopicsModel;
 
-
+    private CategoryProgramModel mCategoryProgramModel;
 
     private CategoryProgramAdapter categoryProgramAdapter;
 
@@ -80,7 +82,23 @@ public class MainActivity extends BaseActivity implements ProgramDelegate{
 
     private void bindCategoryProgram() {
 
-        //List<CategoryProgramsVO> categoryProgramsList =
+        List<CategoryProgramsVO> categoryList = CategoryProgramModelImpl.getObjInstance().getCategoryProgram("b002c7e1a528b7cb460933fc2875e916", new CategoryProgramModel.CategoryProgramDelegate() {
+            @Override
+            public void onSuccess(List<CategoryProgramsVO> categoryProgramVO) {
+                categoryProgramAdapter.setNewData(categoryProgramVO);
+            }
+
+            @Override
+            public void onFail(String error) {
+
+            }
+        });
+
+        if (!categoryList.isEmpty()) {
+
+            categoryProgramAdapter.setNewData(categoryList);
+
+        }
     }
 
     private void bindTopics() {
