@@ -30,6 +30,6 @@ public class SessionViewHolder extends BaseViewHolder<SessionVO> {
     public void bindData(SessionVO data) {
         tvSessionId.setText(data.getSessionId());
         tvSessionName.setText(data.getTitle());
-        tvSessionDuration.setText(data.getLengthInSeconds());
+        tvSessionDuration.setText(data.getLengthInSeconds() + "mins");
     }
 }

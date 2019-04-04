@@ -13,6 +13,7 @@ import com.padcmyanmar.simple_habits_mma.data.vos.CategoryProgramsVO;
 import com.padcmyanmar.simple_habits_mma.delegates.ProgramDelegate;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class CategoryViewHolder extends BaseViewHolder<CategoryProgramsVO> {
 
@@ -26,6 +27,7 @@ public class CategoryViewHolder extends BaseViewHolder<CategoryProgramsVO> {
 
     public CategoryViewHolder(@NonNull View itemView, ProgramDelegate programDelegate) {
         super(itemView);
+        ButterKnife.bind(this, itemView);
         mProgramDelegate = programDelegate;
     }
 

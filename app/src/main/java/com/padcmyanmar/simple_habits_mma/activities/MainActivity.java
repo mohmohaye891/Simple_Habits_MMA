@@ -125,5 +125,8 @@ public class MainActivity extends BaseActivity implements ProgramDelegate{
     @Override
     public void onTapProgramItem(ProgramsVO programsVO) {
 
+        Intent intent = new Intent(getApplicationContext(), DetailsActivity.class);
+        intent.putExtra("programID", programsVO.getProgramID());
+        startActivity(intent);
     }
 }

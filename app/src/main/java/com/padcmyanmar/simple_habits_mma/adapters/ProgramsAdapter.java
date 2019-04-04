@@ -26,6 +26,6 @@ public class ProgramsAdapter extends BaseRecyclerAdapter<ProgramsViewHolder, Pro
     public ProgramsViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
         View itemView = inflater.inflate(R.layout.view_item_program, viewGroup, false);
-        return new ProgramsViewHolder(itemView);
+        return new ProgramsViewHolder(itemView, mDelegate);
     }
 }

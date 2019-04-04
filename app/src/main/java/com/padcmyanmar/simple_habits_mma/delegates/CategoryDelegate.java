@@ -4,7 +4,7 @@ import com.padcmyanmar.simple_habits_mma.data.vos.CategoryProgramsVO;
 
 import java.util.List;
 
-public interface CategoryProgramDelegate {
+public interface CategoryDelegate {
 
     void onSuccess(List<CategoryProgramsVO> categoryProgram);
 

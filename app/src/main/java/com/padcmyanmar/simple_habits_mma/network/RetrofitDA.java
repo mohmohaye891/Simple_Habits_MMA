@@ -1,10 +1,8 @@
 package com.padcmyanmar.simple_habits_mma.network;
 
 import com.google.gson.Gson;
-import com.padcmyanmar.simple_habits_mma.data.models.TopicsModel;
-import com.padcmyanmar.simple_habits_mma.delegates.CategoryProgramDelegate;
+import com.padcmyanmar.simple_habits_mma.delegates.CategoryDelegate;
 import com.padcmyanmar.simple_habits_mma.delegates.CurrentProgramDelegate;
-import com.padcmyanmar.simple_habits_mma.delegates.ProgramDelegate;
 import com.padcmyanmar.simple_habits_mma.delegates.TopicsDelegate;
 import com.padcmyanmar.simple_habits_mma.network.responses.CategoriesProgramsResponse;
 import com.padcmyanmar.simple_habits_mma.network.responses.CurrentProgramResponse;
@@ -74,7 +72,7 @@ public class RetrofitDA implements DataAgent {
     }
 
     @Override
-    public void getCategoryProgram(String accessToken, int page, final CategoryProgramDelegate categoryProgramDelegate) {
+    public void getCategoryProgram(String accessToken, int page, final CategoryDelegate categoryProgramDelegate) {
         Call<CategoriesProgramsResponse> categoriesProgramsResponseCall = mApi.getCategoryProgramResponse(accessToken, page);
         categoriesProgramsResponseCall.enqueue(new Callback<CategoriesProgramsResponse>() {
             @Override
