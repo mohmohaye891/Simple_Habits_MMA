@@ -6,4 +6,12 @@
     <string name="lbl_time">5 mins</string>
     <string name="lbl_all_topics">All Topics</string>
     <string name="lbl_read_more">READ MORE</string>
+
+    <string name="title_latest_news">Latest News</string>
+    <string name="title_news_just_for_you">News Just For You</string>
+    <string name="title_favorite_news">Favorite News</string>
+
+    <string name="btn_forgot_password"><u><i>Forgot Password</i></u></string>
+    <string name="btn_to_register"><u><i>New User ? Register</i></u></string>
+
 </resources>

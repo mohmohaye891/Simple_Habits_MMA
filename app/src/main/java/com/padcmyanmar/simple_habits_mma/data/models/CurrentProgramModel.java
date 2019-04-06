@@ -7,8 +7,8 @@ public interface CurrentProgramModel {
 
     CurrentProgramVO getCurrentProgram(String accessToken, CurrentProgramDelegate delegate);
 
-    interface CurrentProgramDelegate {
+   /* interface CurrentProgramDelegate {
         void onSuccess(CurrentProgramVO currentProgram);
         void onFail(String errorMsg);
-    }
+    }*/
 }

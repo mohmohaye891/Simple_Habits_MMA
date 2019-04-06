@@ -2,6 +2,7 @@ package com.padcmyanmar.simple_habits_mma.network;
 
 import com.padcmyanmar.simple_habits_mma.delegates.CategoryDelegate;
 import com.padcmyanmar.simple_habits_mma.delegates.CurrentProgramDelegate;
+import com.padcmyanmar.simple_habits_mma.delegates.LoginDelegate;
 import com.padcmyanmar.simple_habits_mma.delegates.TopicsDelegate;
 
 public interface DataAgent {
@@ -11,4 +12,7 @@ public interface DataAgent {
     void getCategoryProgram(String accessToken, int page, CategoryDelegate categoryProgramDelegate);
 
     void getCurrentProgram(String accessToken, int page, CurrentProgramDelegate currentProgramDelegate);
+
+    void login(String emailOrPhoneNumber, String password,
+               LoginDelegate loginDelegate);
 }

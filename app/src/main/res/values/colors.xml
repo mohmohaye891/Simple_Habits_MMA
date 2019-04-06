@@ -6,4 +6,7 @@
 
     <color name="bgColor">#333334</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+
+    <color name="secondary_text">#757575</color>
 </resources>

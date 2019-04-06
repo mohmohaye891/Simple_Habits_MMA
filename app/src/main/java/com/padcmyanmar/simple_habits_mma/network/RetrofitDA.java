@@ -3,6 +3,7 @@ package com.padcmyanmar.simple_habits_mma.network;
 import com.google.gson.Gson;
 import com.padcmyanmar.simple_habits_mma.delegates.CategoryDelegate;
 import com.padcmyanmar.simple_habits_mma.delegates.CurrentProgramDelegate;
+import com.padcmyanmar.simple_habits_mma.delegates.LoginDelegate;
 import com.padcmyanmar.simple_habits_mma.delegates.TopicsDelegate;
 import com.padcmyanmar.simple_habits_mma.network.responses.CategoriesProgramsResponse;
 import com.padcmyanmar.simple_habits_mma.network.responses.CurrentProgramResponse;
@@ -111,6 +112,11 @@ public class RetrofitDA implements DataAgent {
                 currentProgramDelegate.onFail(t.getMessage());
             }
         });
+    }
+
+    @Override
+    public void login(String emailOrPhoneNumber, String password, LoginDelegate loginDelegate) {
+
     }
 
 }
